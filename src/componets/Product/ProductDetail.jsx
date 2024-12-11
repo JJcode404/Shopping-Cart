@@ -1,5 +1,6 @@
 import { useImageURL } from "../Shared/imageUrl";
 import { useParams } from "react-router-dom";
+import { Button } from "../Shared/Button";
 
 function ProductDetails() {
   const { id } = useParams();
@@ -35,7 +36,7 @@ function ProductDetails() {
               </select>
             </div>
             <div className="product-actions">
-              {/* button componets here  */}
+              <Button type="submit" text="Add To Cart" />
             </div>
           </div>
         </div>
@@ -43,3 +44,5 @@ function ProductDetails() {
     </>
   );
 }
+
+export { ProductDetails };

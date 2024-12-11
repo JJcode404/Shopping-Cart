@@ -1,14 +1,19 @@
 import { useImageURL } from "../Shared/imageUrl";
+import styles from "./Product.module.css";
 
 function ProductCard({ filteredCategory = {} }) {
   const { data, loading, error } = useImageURL();
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className={styles.loadingMessage}>Loading...</div>;
   }
 
   if (error) {
-    return <div>Error loading products: {error.message}</div>;
+    return (
+      <div className={styles.errorMessage}>
+        Error loading products: {error.message}
+      </div>
+    );
   }
 
   const filterItems = data
@@ -24,13 +29,19 @@ function ProductCard({ filteredCategory = {} }) {
     : [];
 
   return (
-    <div className="home-product-display">
+    <div className={styles.homeProductDisplay}>
       {filterItems.map((item) => (
-        <div key={item.id} className="product-card">
-          <img src={item.image} alt={item.title} className="product-image" />
-          <div className="description">
-            <div className="name">{item.title}</div>
-            <div className="price">${item.price}</div>
+        <div key={item.id} className={styles.productCard}>
+          <div className={styles.imageContainer}>
+            <img
+              src={item.image}
+              alt={item.title}
+              className={styles.productImage}
+            />
+          </div>
+          <div className={styles.description}>
+            <div className={styles.name}>{item.title}</div>
+            <div className={styles.price}>${item.price}</div>
           </div>
         </div>
       ))}

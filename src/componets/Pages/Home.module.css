@@ -1,0 +1,60 @@
+.mainSection {
+  height: 100vh;
+  width: 100%;
+  background-image: url("../src/assets/image2Ext.jpg");
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  display: flex;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-position: 0% 38%;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  font-family: "Arial", sans-serif;
+}
+
+.overlay h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.overlay p {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+.displayHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  margin: 20px 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.displayHeader h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+  color: #333;
+}
+
+.displayHeader p {
+  font-size: 1rem;
+  margin-top: 10px;
+  color: #666;
+}
+.shop {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}

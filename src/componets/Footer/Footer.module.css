@@ -1,0 +1,165 @@
+.footer {
+  background-color: #423c39;
+  color: white;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  text-align: left;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.openingHours,
+.terms,
+.emailForm,
+.assistance,
+.socials {
+  flex: 1 1 300px;
+}
+
+.openingHours h2,
+.terms h2,
+.emailForm h2,
+.assistance h2,
+.socials h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.terms p,
+.openingHours p,
+.assistance p,
+.socials p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.emailForm form {
+  display: flex;
+  flex-direction: column;
+}
+
+.emailForm label {
+  font-size: 0.9rem;
+}
+
+.checkbox {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.checkbox input[type="checkbox"] {
+  margin-right: 0.5rem;
+  background-color: transparent;
+}
+.checkbox input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.checkbox input[type="checkbox"]:hover {
+  border-color: #ff9900;
+}
+
+.checkbox input[type="checkbox"]:checked {
+  background-color: #ff9900;
+  border-color: #ff9900;
+  position: relative;
+}
+
+.checkbox input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  left: 4px;
+  top: 1px;
+}
+
+.socials .icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.icons > svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+  cursor: pointer;
+  transition: transform 0.2s, fill 0.2s;
+}
+
+.icons > svg:hover {
+  transform: scale(1.2);
+  fill: #ff9900;
+}
+
+.copyright {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  text-align: center;
+  color: #aaa;
+}
+
+@media (max-width: 768px) {
+  .details {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .openingHours,
+  .terms,
+  .emailForm,
+  .assistance,
+  .socials {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .emailForm form {
+    align-items: center;
+  }
+
+  .emailForm input[type="email"] {
+    width: 100%;
+  }
+}
+
+.searchInput {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background-color: transparent;
+  color: inherit;
+  border-bottom: 1px solid #ccc;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}

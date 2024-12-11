@@ -1,12 +1,13 @@
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 
-const useImageURL = ({ url = "https://fakestoreapi.com/products" } = {}) => {
+const useImageURL = (url = "https://fakestoreapi.com/products") => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    console.log(url);
     if (!url) {
       setError("Url required");
       setLoading(false);
