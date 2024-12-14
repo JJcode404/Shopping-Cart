@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Shop.module.css";
 import { ProductCard } from "../../Product/ProductCard";
 
 function AllProducts() {
+  const [productCount, setProductCount] = useState(0);
+
   return (
     <>
       <div className={styles.top}>
@@ -14,11 +16,11 @@ function AllProducts() {
         </p>
       </div>
       <div className={styles.sort}>
-        <span>19 Products</span>
-        <div>Sort By: Recomended</div>
+        <span>{productCount} Products</span>
+        <div>Sort By: Recommended</div>
       </div>
       <div className={styles.displayImages}>
-        <ProductCard />
+        <ProductCard onProductCount={setProductCount} />
       </div>
     </>
   );

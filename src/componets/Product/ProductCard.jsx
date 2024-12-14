@@ -1,7 +1,7 @@
 import { useImageURL } from "../Shared/imageUrl";
 import styles from "./Product.module.css";
 
-function ProductCard({ filteredCategory = {} }) {
+function ProductCard({ filteredCategory = {}, onProductCount }) {
   const { data, loading, error } = useImageURL();
 
   if (loading) {
@@ -27,6 +27,10 @@ function ProductCard({ filteredCategory = {} }) {
         return true;
       })
     : [];
+
+  if (onProductCount) {
+    onProductCount(filterItems.length);
+  }
 
   return (
     <div className={styles.homeProductDisplay}>
