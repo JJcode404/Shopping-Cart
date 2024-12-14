@@ -1,9 +1,8 @@
-import { Button } from "../Shared/Button";
+import { Button } from "../../Shared/Button";
 import styles from "./Home.module.css";
-import { NavBar } from "../Header/Navbar";
-import { ProductCard } from "../Product/ProductCard";
-import { symbol } from "prop-types";
-import { Footer } from "../Footer/footer";
+import { NavBar } from "../../Header/Navbar";
+import { ProductCard } from "../../Product/ProductCard";
+import { Footer } from "../../Footer/footer";
 
 function HomePageContainer() {
   return (

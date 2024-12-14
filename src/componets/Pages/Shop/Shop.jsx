@@ -1,15 +1,17 @@
-import { Button } from "../Shared/Button";
-import styles from "./Home.module.css";
-import { NavBar } from "../Header/Navbar";
-import { ProductCard } from "../Product/ProductCard";
-import { Footer } from "../Footer/footer";
+import { Button } from "../../Shared/Button";
+import styles from "./Shop.module.css";
+import { NavBar } from "../../Header/Navbar";
+import { ProductCard } from "../../Product/ProductCard";
+import { Footer } from "../../Footer/footer";
+import { AllProducts } from "./Allproducts";
 
 function ShopContainer() {
   return (
-    <>
-      <div className="sidebar">
-        <div className="browseBy">
-          <div className="header">Browse BY</div>
+    <div className={styles.container}>
+      <div className={styles.sidebar}>
+        <div className={styles.browseBy}>
+          <div className={styles.header}>Browse BY</div>
+          <hr />
           <li>
             <a href="#">All Products</a>
           </li>
@@ -20,41 +22,46 @@ function ShopContainer() {
             <a href="#">Jewelry</a>
           </li>
         </div>
-        <hr />
-        <div className="filterBy">
-          <div className="header">Filter BY</div>
+
+        <div className={styles.filterBy}>
+          <div className={styles.header}>Filter BY</div>
           <hr />
-          <div className="filter-price">
-            <div className="priceName">Price</div>
-            <span className="filter-hidden-icon"> + </span>
+          <div className={styles.filterPrice}>
+            <div className={styles.priceName}>
+              Price <span className={styles.filterHiddenIcon}> + </span>
+            </div>
+
             <label>
               Max Price:
               <input type="number" placeholder="Enter max price" />
             </label>
           </div>
           <hr />
-          <div className="filter-color">
-            <div className="colorName">
-              Color <span className="colorSelected"></span>
+          <div className={styles.filterColor}>
+            <div className={styles.colorName}>
+              Color: <span className={styles.colorSelected}>Green</span>
+              <span className={styles.filterHiddenIcon}> + </span>
             </div>
-            <span className="filter-hidden-icon"> + </span>
+
             <label>
-              <span className="colordiv"></span>
-              <span className="colordiv"></span>
-              <span className="colordiv"></span>
-              <span className="colordiv"></span>
-              <span className="colordiv"></span>
-              <span className="colordiv"></span>
-              <span className="colordiv"></span>
-              <span className="colordiv"></span>
-              <span className="colordiv"></span>
+              <span className={styles.colorDiv}></span>
+              <span className={styles.colorDiv}></span>
+              <span className={styles.colorDiv}></span>
+              <span className={styles.colorDiv}></span>
+              <span className={styles.colorDiv}></span>
+              <span className={styles.colorDiv}></span>
+              <span className={styles.colorDiv}></span>
+              <span className={styles.colorDiv}></span>
+              <span className={styles.colorDiv}></span>
             </label>
           </div>
           <hr />
-          <div className="filter-size">
-            <div className="sizeName">Size</div>
-            <span className="filter-hidden-icon"> + </span>
-            <div className="sizes">
+          <div className={styles.filterSize}>
+            <div className={styles.sizeName}>
+              Size <span className={styles.filterHiddenIcon}> + </span>
+            </div>
+
+            <div className={styles.sizes}>
               <label>
                 <input type="checkbox" />
                 <span>36</span>
@@ -96,7 +103,10 @@ function ShopContainer() {
           </div>
         </div>
       </div>
-    </>
+      <div className={styles.ProductDetails}>
+        <AllProducts />
+      </div>
+    </div>
   );
 }
 
