@@ -4,6 +4,7 @@ import { NavBar } from "../../Header/Navbar";
 import { ProductCard } from "../../Product/ProductCard";
 import { Footer } from "../../Footer/footer";
 import { AllProducts } from "./Allproducts";
+import { Link } from "react-router-dom";
 
 function ShopContainer() {
   return (
@@ -13,7 +14,7 @@ function ShopContainer() {
           <div className={styles.header}>Browse BY</div>
           <hr />
           <li>
-            <a href="#">All Products</a>
+            <Link to="/shop/allProducts">All Products</Link>
           </li>
           <li>
             <a href="#">Best Sellers</a>

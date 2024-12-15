@@ -3,6 +3,7 @@ import styles from "./Header.module.css";
 import { CircleUser } from "lucide-react";
 import { ShoppingBag } from "lucide-react";
 import { Heart } from "lucide-react";
+import { Link } from "react-router-dom";
 function NavBar() {
   return (
     <div className={styles.navBar}>
@@ -16,8 +17,12 @@ function NavBar() {
       </div>
       <div className={styles.bottom}>
         <ul>
-          <li>Home</li>
-          <li>Shop</li>
+          <Link to="/" className={styles.links}>
+            Home
+          </Link>
+          <Link to="/shop" className={styles.links}>
+            Shop
+          </Link>
           <li>Look Book</li>
           <li>Our Brand</li>
           <li>Contact Us</li>
