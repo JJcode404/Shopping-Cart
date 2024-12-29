@@ -1,0 +1,122 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product {
+  display: flex;
+  gap: 20px;
+  max-width: 800px;
+  width: 100%;
+}
+
+.producImage img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.productDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex: 1;
+}
+
+.productDetails h1 {
+  font-size: 24px;
+  margin: 0;
+  color: #333;
+}
+
+.productPrice {
+  font-size: 20px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.productDescription {
+  font-size: 16px;
+  color: #555;
+}
+
+.productSizes label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.productSizes select {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.productActions {
+  margin-top: 20px;
+}
+
+.productCard {
+  width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.productImage {
+  height: 500px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  align-items: center;
+  background-color: #f9f9f9;
+}
+
+.productImage img {
+  max-height: 100%;
+  max-width: 100%;
+  mix-blend-mode: multiply;
+  object-fit: cover;
+}
+
+.QuantityInput {
+  height: 30px;
+  max-width: 60px;
+  text-indent: 10px;
+}
+.productQuantity {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.productActions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inlineButtons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.inlineButtons > :first-child {
+  flex: 1;
+}
+
+.wishButton {
+  background: none;
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

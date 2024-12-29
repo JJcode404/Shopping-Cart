@@ -1,5 +1,6 @@
 import { useImageURL } from "../Shared/imageUrl";
 import styles from "./Product.module.css";
+import { Link } from "react-router-dom";
 
 function ProductCard({ filteredCategory = {}, onProductCount }) {
   const { data, loading, error } = useImageURL();
@@ -35,19 +36,21 @@ function ProductCard({ filteredCategory = {}, onProductCount }) {
   return (
     <div className={styles.homeProductDisplay}>
       {filterItems.map((item) => (
-        <div key={item.id} className={styles.productCard}>
-          <div className={styles.imageContainer}>
-            <img
-              src={item.image}
-              alt={item.title}
-              className={styles.productImage}
-            />
+        <Link to={`/productDetails/${item.id}`} className={styles.productLink}>
+          <div key={item.id} className={styles.productCard}>
+            <div className={styles.imageContainer}>
+              <img
+                src={item.image}
+                alt={item.title}
+                className={styles.productImage}
+              />
+            </div>
+            <div className={styles.description}>
+              <div className={styles.name}>{item.title}</div>
+              <div className={styles.price}>${item.price}</div>
+            </div>
           </div>
-          <div className={styles.description}>
-            <div className={styles.name}>{item.title}</div>
-            <div className={styles.price}>${item.price}</div>
-          </div>
-        </div>
+        </Link>
       ))}
     </div>
   );

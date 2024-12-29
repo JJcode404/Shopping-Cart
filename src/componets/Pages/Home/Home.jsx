@@ -3,6 +3,7 @@ import styles from "./Home.module.css";
 import { NavBar } from "../../Header/Navbar";
 import { ProductCard } from "../../Product/ProductCard";
 import { Footer } from "../../Footer/footer";
+import { Navigate } from "react-router-dom";
 
 function HomePageContainer() {
   return (

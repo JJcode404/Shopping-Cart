@@ -4,6 +4,7 @@ function Button({
   text = "Add To Cart",
   type = "primary",
   handleClick,
+  className,
   border,
   background = "transparent",
   color = "#BF4F74",
@@ -17,14 +18,19 @@ function Button({
     border: border,
     width: width,
     color: color,
-    margin: "0.5em 1em",
+    marginTop: "0.5em",
     padding: padding,
     fontSize: fontSize + "px",
     cursor: "pointer",
   };
 
   return (
-    <button style={buttonStyle} onClick={handleClick} aria-label={text}>
+    <button
+      style={buttonStyle}
+      onClick={handleClick}
+      aria-label={text}
+      className={className}
+    >
       {text}
     </button>
   );
