@@ -36,7 +36,11 @@ function ProductCard({ filteredCategory = {}, onProductCount }) {
   return (
     <div className={styles.homeProductDisplay}>
       {filterItems.map((item) => (
-        <Link to={`/productDetails/${item.id}`} className={styles.productLink}>
+        <Link
+          to={`/productDetails/${item.id}`}
+          className={styles.productLink}
+          key={item.title}
+        >
           <div key={item.id} className={styles.productCard}>
             <div className={styles.imageContainer}>
               <img

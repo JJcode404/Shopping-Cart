@@ -1,6 +1,7 @@
 import styles from "./ProductDetails.module.css";
 import { useImageURL } from "../Shared/imageUrl";
 import { useParams } from "react-router-dom";
+import { useState } from "react";
 import { Button } from "../Shared/Button";
 import { Footer } from "../Footer/footer";
 import { NavBar } from "../Header/Navbar";
@@ -8,10 +9,33 @@ import { Heart } from "lucide-react";
 
 function ProductDetails() {
   const { id } = useParams();
+  const [value, setValue] = useState(1);
   const { loading, error, data } = useImageURL(
     `https://fakestoreapi.com/products/${id}`
   );
-  console.log("am here");
+
+  const addToCart = () => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const existingProductIndex = cart.findIndex(
+      (item) => item.id === parseInt(id)
+    );
+
+    if (existingProductIndex !== -1) {
+      cart[existingProductIndex].quantity = parseInt(value);
+    } else {
+      const product = {
+        id: parseInt(id),
+        quantity: parseInt(value),
+        details: data,
+      };
+      cart.push(product);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    console.log("Cart updated:", cart);
+  };
 
   if (loading) {
     return <div>Loading...</div>;
@@ -37,7 +61,16 @@ function ProductDetails() {
             <p className={styles.productDescription}>{data.description}</p>
             <div className={styles.productQuantity}>
               <label htmlFor="quantity">Quantity</label>
-              <input type="number" value="1" className={styles.QuantityInput} />
+              <input
+                type="number"
+                value={value ?? 1}
+                onChange={(e) => {
+                  const inputValue = e.target.value;
+                  setValue(inputValue);
+                  console.log(inputValue);
+                }}
+                className={styles.QuantityInput}
+              />
             </div>
             <div className={styles.productSizes}>
               <label htmlFor="size">Size:</label>
@@ -56,6 +89,7 @@ function ProductDetails() {
                   color="black"
                   width="auto"
                   padding="10px"
+                  handleClick={addToCart}
                 />
                 <button className={styles.wishButton}>
                   <span>
