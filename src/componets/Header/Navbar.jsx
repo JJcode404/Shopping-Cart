@@ -30,7 +30,9 @@ function NavBar() {
         <div className={styles.logo}>Fly Flex</div>
         <div className={styles.cart}>
           <Heart className={styles.whiteIcon} />
-          <ShoppingBag className={styles.whiteIcon} />
+          <Link to="/cart" className={styles.links}>
+            <ShoppingBag className={styles.whiteIcon} />
+          </Link>
         </div>
       </div>
     </div>

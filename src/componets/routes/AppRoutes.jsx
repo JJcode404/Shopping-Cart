@@ -3,6 +3,7 @@ import { ShopPage } from "../Pages/Shop/Shop";
 import { AllProducts } from "../Pages/Shop/Allproducts";
 import { ProductDetails } from "../Product/ProductDetail";
 import { JewelryProducts } from "../Pages/Shop/Jewelry";
+import { CartItems } from "../Cart/CartItem";
 import { Children } from "react";
 
 const routes = [
@@ -22,6 +23,10 @@ const routes = [
   {
     path: "/productDetails/:id",
     element: <ProductDetails />,
+  },
+  {
+    path: "/cart",
+    element: <CartItems />,
   },
 ];
 

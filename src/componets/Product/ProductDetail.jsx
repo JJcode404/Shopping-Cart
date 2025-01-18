@@ -33,8 +33,6 @@ function ProductDetails() {
     }
 
     localStorage.setItem("cart", JSON.stringify(cart));
-
-    console.log("Cart updated:", cart);
   };
 
   if (loading) {
