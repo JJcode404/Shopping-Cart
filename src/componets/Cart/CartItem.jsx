@@ -11,7 +11,7 @@ function CartItems() {
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
     updateCart(storedCart);
-  }, [cart]);
+  }, []);
 
   return (
     <>
