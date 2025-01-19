@@ -1,10 +1,17 @@
 import { NavBar } from "../Header/Navbar";
 import { Footer } from "../Footer/footer";
 import { CartList } from "./CartList";
+import { CartSumary } from "./CartSumary";
 import styles from "./CartItems.module.css";
+import { useState, useEffect } from "react";
 
 function CartItems() {
-  const cart = JSON.parse(localStorage.getItem("cart"));
+  const [cart, updateCart] = useState([]);
+
+  useEffect(() => {
+    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+    updateCart(storedCart);
+  }, [cart]);
 
   return (
     <>
@@ -15,8 +22,8 @@ function CartItems() {
         <div className={styles.cartItems}>
           {cart && cart.length > 0 ? (
             <>
-              <CartList cart={cart} />
-              {/* <CartSummary cart={cart} /> */}
+              <CartList cart={cart} updateCart={updateCart} />
+              <CartSumary cart={cart} updateCart={updateCart} />
             </>
           ) : (
             <div className={styles.emptyState}>

@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Button } from "../Shared/Button";
 import { Footer } from "../Footer/footer";
 import { NavBar } from "../Header/Navbar";
-import { Heart } from "lucide-react";
+import { Heart, TestTubeDiagonal } from "lucide-react";
 
 function ProductDetails() {
   const { id } = useParams();
@@ -27,6 +27,7 @@ function ProductDetails() {
       const product = {
         id: parseInt(id),
         quantity: parseInt(value),
+        totalPrice: (value * data.price).toFixed(2),
         details: data,
       };
       cart.push(product);

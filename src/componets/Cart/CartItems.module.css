@@ -16,8 +16,14 @@
 
 .cartItems {
   display: flex;
-  flex-direction: column;
   gap: 2rem;
+}
+.cartItems:first-child {
+  flex: 2;
+}
+
+.cartItems:nth-child(2) {
+  flex: 1;
 }
 
 .emptyState {

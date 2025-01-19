@@ -1,0 +1,44 @@
+.summaryContainer {
+  flex: 1;
+}
+
+.hearder {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+hr {
+  margin: 10px 0;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+.subtotalContainer,
+.totalContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.subtotal,
+.total {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.subtotalPrice,
+.totalPrice {
+  font-size: 1.2rem;
+}
+
+.total {
+  color: #333;
+}
+
+.totalPrice {
+  color: #000;
+}
+
+.checkOut {
+  margin-top: 20px;
+}

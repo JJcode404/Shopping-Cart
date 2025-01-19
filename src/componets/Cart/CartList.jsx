@@ -1,8 +1,12 @@
 import { Trash2 } from "lucide-react";
 import styles from "./Cart.module.css";
 
-function CartList({ cart }) {
-  console.log(cart);
+function CartList({ cart, updateCart }) {
+  const handleDelete = (itemId) => {
+    const updatedCart = cart.filter((product) => product.id !== itemId);
+    updateCart(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+  };
 
   return (
     <div className={styles.cartList}>
@@ -29,15 +33,12 @@ function CartList({ cart }) {
           <div className={styles.quality}>
             <input
               type="number"
-              value={item.quality}
+              value={item.quantity}
               className={styles.quantityInput}
-              readOnly
             />
           </div>
-          <div className={styles.productTotalPrice}>
-            ${item.details.price * item.quantity}
-          </div>
-          <div className={styles.delete}>
+          <div className={styles.productTotalPrice}>${item.totalPrice}</div>
+          <div className={styles.delete} onClick={() => handleDelete(item.id)}>
             <Trash2 className={styles.trashIcon} />
           </div>
           <hr className={styles.divider} />
