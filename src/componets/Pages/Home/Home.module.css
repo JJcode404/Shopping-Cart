@@ -63,3 +63,7 @@
   justify-content: center;
   margin-top: 10px;
 }
+.shopButton:hover {
+  background-color: white;
+  color: black;
+}

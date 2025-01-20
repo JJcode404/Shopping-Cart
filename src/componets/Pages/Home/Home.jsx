@@ -31,16 +31,7 @@ function DisplaySection() {
       <div className="displayImages">
         <ProductCard filteredCategory={{ productIds: [5, 8, 7] }} />
       </div>
-      <div className={styles.shop}>
-        <Button
-          type="primary"
-          text="Shop Best Sellers"
-          color="#ffffff"
-          background="#423C39"
-          width="200px"
-          padding="1em 0px"
-        />
-      </div>
+      <div className={styles.shop}></div>
     </div>
   );
 }

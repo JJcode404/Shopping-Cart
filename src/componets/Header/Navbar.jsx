@@ -4,6 +4,7 @@ import { CircleUser } from "lucide-react";
 import { ShoppingBag } from "lucide-react";
 import { Heart } from "lucide-react";
 import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 function NavBar() {
   return (
     <div className={styles.navBar}>
@@ -17,12 +18,22 @@ function NavBar() {
       </div>
       <div className={styles.bottom}>
         <ul>
-          <Link to="/" className={styles.links}>
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? `${styles.links} ${styles.active}` : styles.links
+            }
+          >
             Home
-          </Link>
-          <Link to="/shop" className={styles.links}>
+          </NavLink>
+          <NavLink
+            to="/shop"
+            className={({ isActive }) =>
+              isActive ? `${styles.links} ${styles.active}` : styles.links
+            }
+          >
             Shop
-          </Link>
+          </NavLink>
           <li>Look Book</li>
           <li>Our Brand</li>
           <li>Contact Us</li>
@@ -30,9 +41,14 @@ function NavBar() {
         <div className={styles.logo}>Fly Flex</div>
         <div className={styles.cart}>
           <Heart className={styles.whiteIcon} />
-          <Link to="/cart" className={styles.links}>
-            <ShoppingBag className={styles.whiteIcon} />
-          </Link>
+          <NavLink
+            to="/cart"
+            className={({ isActive }) =>
+              isActive ? `${styles.links} ${styles.active}` : styles.links
+            }
+          >
+            <ShoppingBag className={styles.icon} />
+          </NavLink>
         </div>
       </div>
     </div>
