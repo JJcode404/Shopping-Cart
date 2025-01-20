@@ -25,9 +25,7 @@ function CartList({ cart, updateCart }) {
               <div className={styles.productPrice}>
                 ${item.details.price.toFixed(2)}
               </div>
-              <div className={styles.productSize}>
-                Size: {item.size || "N/A"}
-              </div>
+              <div className={styles.productSize}>Size: {item.size}</div>
             </div>
           </div>
           <div className={styles.quality}>

@@ -10,6 +10,7 @@ import { Heart, TestTubeDiagonal } from "lucide-react";
 function ProductDetails() {
   const { id } = useParams();
   const [value, setValue] = useState(1);
+  const [selectedSize, setSelectedSize] = useState("Small");
   const { loading, error, data } = useImageURL(
     `https://fakestoreapi.com/products/${id}`
   );
@@ -28,6 +29,7 @@ function ProductDetails() {
         id: parseInt(id),
         quantity: parseInt(value),
         totalPrice: (value * data.price).toFixed(2),
+        size: selectedSize,
         details: data,
       };
       cart.push(product);
@@ -73,17 +75,21 @@ function ProductDetails() {
             </div>
             <div className={styles.productSizes}>
               <label htmlFor="size">Size:</label>
-              <select id="size">
-                <option value="S">Small</option>
-                <option value="M">Medium</option>
-                <option value="L">Large</option>
-                <option value="XL">Extra Large</option>
+              <select
+                id="size"
+                value={selectedSize}
+                onChange={(e) => setSelectedSize(e.target.value)}
+              >
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+                <option value="Extra Large">Extra Large</option>
               </select>
             </div>
             <div className={styles.productActions}>
               <div className={styles.inlineButtons}>
                 <Button
-                  type="submit"
+                  type="primary"
                   text="Add To Cart"
                   color="black"
                   width="auto"
@@ -97,7 +103,7 @@ function ProductDetails() {
                 </button>
               </div>
               <Button
-                type="submit"
+                type="secondary"
                 text="Buy Now"
                 color="white"
                 background="black"

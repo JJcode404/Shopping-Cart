@@ -1,0 +1,8 @@
+.primary:hover {
+  color: grey;
+}
+
+.secondary:hover {
+  background-color: grey;
+  color: white;
+}

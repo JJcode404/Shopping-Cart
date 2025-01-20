@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import styles from "./Shared.module.css";
 
 function Button({
   text = "Add To Cart",
@@ -29,7 +30,7 @@ function Button({
       style={buttonStyle}
       onClick={handleClick}
       aria-label={text}
-      className={className}
+      className={`${styles[type]}`}
     >
       {text}
     </button>
