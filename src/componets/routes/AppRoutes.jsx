@@ -4,6 +4,7 @@ import { AllProducts } from "../Pages/Shop/Allproducts";
 import { ProductDetails } from "../Product/ProductDetail";
 import { JewelryProducts } from "../Pages/Shop/Jewelry";
 import { CartItems } from "../Cart/CartItem";
+import { LookBook } from "../Pages/lookBook/looks";
 import { Children } from "react";
 
 const routes = [
@@ -27,6 +28,10 @@ const routes = [
   {
     path: "/cart",
     element: <CartItems />,
+  },
+  {
+    path: "/lookBook",
+    element: <LookBook />,
   },
 ];
 

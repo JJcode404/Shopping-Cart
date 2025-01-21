@@ -33,6 +33,7 @@ function CartList({ cart, updateCart }) {
               type="number"
               value={item.quantity}
               className={styles.quantityInput}
+              readOnly
             />
           </div>
           <div className={styles.productTotalPrice}>${item.totalPrice}</div>

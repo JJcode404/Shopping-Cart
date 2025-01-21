@@ -34,7 +34,14 @@ function NavBar() {
           >
             Shop
           </NavLink>
-          <li>Look Book</li>
+          <NavLink
+            to="/lookBook"
+            className={({ isActive }) =>
+              isActive ? `${styles.links} ${styles.active}` : styles.links
+            }
+          >
+            Look Book
+          </NavLink>
           <li>Our Brand</li>
           <li>Contact Us</li>
         </ul>
