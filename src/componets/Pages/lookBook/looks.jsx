@@ -21,7 +21,6 @@ function LookBook() {
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) return <p>Loading...</p>;
   if (error) return <p>A network error was encountered</p>;
 
   return (
@@ -33,7 +32,7 @@ function LookBook() {
             <div key={photo.id} className={styles.photoItem}>
               <a href={photo.url} target="_blank" rel="noopener noreferrer">
                 <img
-                  src={photo.src.medium}
+                  src={photo.src.large}
                   alt={photo.photographer}
                   className={styles.photoImage}
                 />

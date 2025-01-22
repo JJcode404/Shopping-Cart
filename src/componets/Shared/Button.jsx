@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
+import { useState } from "react";
 import styles from "./Shared.module.css";
 
 function Button({
   text = "Add To Cart",
   type = "primary",
   handleClick,
-  className,
   border,
   background = "transparent",
   color = "#BF4F74",
@@ -13,8 +13,10 @@ function Button({
   width,
   padding = "0.25em 1em",
 }) {
+  const [isHovered, setIsHovered] = useState(false);
+
   const buttonStyle = {
-    background: background,
+    backgroundColor: isHovered ? "#808080" : background,
     borderRadius: "3px",
     border: border,
     width: width,
@@ -30,6 +32,8 @@ function Button({
       style={buttonStyle}
       onClick={handleClick}
       aria-label={text}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       className={`${styles[type]}`}
     >
       {text}
