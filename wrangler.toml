@@ -1,4 +1,0 @@
-name = "flyflex"
-type = "javascript"  # Adjust based on your setup
-main = "dist/index.js"
-compatibility_date = "2025-03-19"
