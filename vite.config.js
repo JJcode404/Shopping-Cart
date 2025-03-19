@@ -11,4 +11,9 @@ export default defineConfig({
       },
     },
   },
+  resolve: {
+    alias: {
+      fs: "browserify-fs", // Example for fixing `fs` module
+    },
+  },
 });
