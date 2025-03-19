@@ -1,0 +1,4 @@
+name = "flyflex"
+type = "javascript"  # Adjust based on your setup
+main = "dist/index.js"  # Ensure this points to your bundled file
+compatibility_date = "2025-03-19"
