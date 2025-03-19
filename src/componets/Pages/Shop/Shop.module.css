@@ -1,13 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-/* @font-face {
-  font-family: Roboto;
-  src: url(/paulo-goode-fnort-demo-241116/Paulo-Goode_Fnort-Demo_241116/Roboto-Medium.ttf);
-} */
-@font-face {
-  font-family: Fnort;
-  src: url(/paulo-goode-fnort-demo-241116/Paulo-Goode_Fnort-Demo_241116/Paulo\ Goode\ -\ Fnord\ Twenty-Three\ Italic.otf)
-    format("opentype");
-}
 
 .sidebar {
   padding: 30px;

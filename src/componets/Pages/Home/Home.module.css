@@ -6,7 +6,7 @@
 .mainSection {
   height: 100vh;
   width: 100%;
-  background-image: url("../src/assets/image2Ext.jpg");
+  background-image: url("/public/image2Ext.jpg");
   background-size: cover;
   background-position: bottom center;
   background-repeat: no-repeat;
